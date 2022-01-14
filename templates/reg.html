@@ -1,0 +1,38 @@
+{% extends 'index.html' %}
+
+{% load crispy_forms_tags %}
+
+{%block content%}
+
+{% if messages %}
+{%for msg in messages%}
+<div class="alert alert-{{msg.tags}} alert-dismissible fade show" role="alert">
+  <strong>
+    {% if 'safe' in msg%}
+       {{msg|safe}}
+  {% else %}
+     {{msg}}
+  {%endif%}
+  </strong>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+{%endfor%}
+{%endif%}
+<form method="post">
+    {%csrf_token%}
+    <div class="card reg">
+        <div class="card-body">
+            <h1  id="regtext" style="text-align: center;">Register</h1>
+          {{form|crispy}}
+          <button type="submit" class="btn btn-primary btn-block">Submit</button>
+          <p style="text-align: center;">Already have an account?<a style="text-decoration: none;" href="{% url 'log' %}">Login</a></p>
+        </div>
+      </div>
+</form>
+<style>
+    
+</style>
+{%endblock%}

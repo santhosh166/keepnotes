@@ -1,0 +1,41 @@
+{% extends 'index.html' %}
+{% load crispy_forms_tags %}
+{%block content%}
+{% if messages %}
+{%for msg in messages%}
+<div class="alert alert-{{msg.tags}} alert-dismissible fade show" role="alert">
+  <strong>
+    {% if 'safe' in msg%}
+       {{msg|safe}}
+  {% else %}
+     {{msg}}
+  {%endif%}
+  </strong>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+{%endfor%}
+{%endif%}
+
+<form method="post">
+    {%csrf_token%}
+    <div class="card log">
+        <div class="card-body">
+            <h1 id="logtext" style="text-align: center;">Login</h1>
+          {{form.username|as_crispy_field}}
+          {{form.password1|as_crispy_field}}
+          <button type="submit" class="btn btn-primary btn-block">Login</button>
+        </div>
+      </div>
+</form>
+<style>
+.card{
+  margin: 5px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;   
+}
+</style>
+{%endblock%}

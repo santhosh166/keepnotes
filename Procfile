@@ -1,0 +1,1 @@
+web: gunicorn keepnotes.wsgi --log-file -

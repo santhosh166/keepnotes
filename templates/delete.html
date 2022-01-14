@@ -1,0 +1,15 @@
+{% extends 'index.html' %}
+{%block content%}
+<div style="color:aliceblue;text-align: center;     position: absolute;     top: 45%;     bottom: 50%;  left:24%;   width: 50%;">
+<form method="POST">
+    {% csrf_token %}
+    <div>
+      <h1>Are you want to delete this {{form}} Note?
+      
+      <button type="submit" class="btn btn-danger">Delete</button>
+      <button class="btn btn-primary"><a href="{% url 'show' %}" style="text-decoration:none;color:white">Cancel</a></button>
+    </div>
+    
+  </form>
+</div>
+{%endblock%}
