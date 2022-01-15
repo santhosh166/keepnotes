@@ -4,7 +4,7 @@
 <form method="POST">
     {% csrf_token %}
     <div>
-      <h1>Are you want to delete this {{form}} Note?
+      <h1 style="color:black;">Are you want to delete this {{form}} Note?
       
       <button type="submit" class="btn btn-danger">Delete</button>
       <button class="btn btn-primary"><a href="{% url 'show' %}" style="text-decoration:none;color:white">Cancel</a></button>
