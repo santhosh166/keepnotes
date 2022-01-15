@@ -23,10 +23,11 @@
     {%csrf_token%}
     <div class="card log" style="width:21rem">
         <div class="card-body">
-            <h1 id="logtext" style="text-align: center;">Login</h1>
+            <h1 id="logtext" class="font-effect-shadow-multiple" style="text-align: center;">Login</h1>
           {{form.username|as_crispy_field}}
           {{form.password1|as_crispy_field}}
           <button type="submit" class="btn btn-primary btn-block">Login</button>
+          <p style="text-align: center;">Don't have an account?<a style="text-decoration: none;" href="{% url 'reg' %}">Sign Up</a></p>
         </div>
       </div>
 </form>
@@ -36,6 +37,11 @@
   width: 50%;
   margin-left: auto;
   margin-right: auto;   
+}
+#logtext{
+  color: black;
+  font-family: "Audiowide", sans-serif;
+
 }
 </style>
 {%endblock%}
