@@ -7,23 +7,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'styles/index.css' %}">
+<<<<<<< HEAD
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia|Audiowide">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=fire">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=neon|outline|emboss|shadow-multiple">
+    <title>Taking Notes</title>
+=======
     <title>Notes Taking APP</title>
+>>>>>>> 0a0cc2f49d7db6940cc037cc4ddab6da2324c085
 </head>
 <body>
     
 
-    <nav class="navbar navbar-expand-md bg-dark navbar-dark sticky-top">
+    <nav class="navbar navbar-expand-md  navbar-dark sticky-top">
         <!-- Brand -->
         {%if user.is_authenticated%}
-        <h1 id="username" class="navbar-brand" style="cursor: pointer"> {{user.username}} Notes</h1>
+        <h1 id="username" class="navbar-brand" style="cursor: pointer;color:black;box-shadow: 2px 2px 2px 3px rgb(10, 10, 10);"> {{user.username}} Notes</h1>
         {%else%}
-        <h1 id="appname" class="navbar-brand" style="cursor: pointer">Notes Taking App</h1>
+        <h1 id="appname" class="navbar-brand" style="cursor: pointer;color:black;box-shadow: 2px 2px 2px 3px rgb(124, 116, 116);">Notes Taking App</h1>
         {%endif%}
   
       
         <!-- Toggler/collapsibe Button -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-          <span class="navbar-toggler-icon"></span>
+        <button style="background-color: black;cursor:pointer" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon " ></span>
         </button>
       
         <!-- Navbar links -->
@@ -31,20 +38,20 @@
           <ul class="navbar-nav  ml-auto">
             {%if user.is_authenticated%}
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'create' %}">Create</a>
+              <a class="nav-link" href="{% url 'create' %}" style="color: black;">Create</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'show' %}">ShowMyNotes</a>
+              <a class="nav-link" href="{% url 'show' %}" style="color: black;">ShowMyNotes</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'log_out' %}">Logout</a>
+              <a class="nav-link" href="{% url 'log_out' %}" style="color: black;">Logout</a>
             </li>
             {%else%}
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'reg' %}">Register</a>
+                <a class="nav-link" href="{% url 'reg' %}" style="color: black;">Register</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'log' %}">Login</a>
+                <a class="nav-link" href="{% url 'log' %}" style="color: black;">Login</a>
               </li>
               {%endif%}
           </ul>
@@ -56,7 +63,25 @@
 
           {%endblock%}
       </div>
-
+<style>
+  nav{
+    background-color: rgb(253, 252, 251);
+  }
+  .navbar-brand{
+    font-family: "Sofia", sans-serif;
+  
+    
+  }
+  body{
+    background-image: url('https://images.unsplash.com/photo-1558470598-a5dda9640f68?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80');
+    background-attachment: fixed;
+   background-size:cover;
+  }
+  .navbar-nav li a:hover{
+       background-color: rgb(131, 108, 231);
+       color: rgb(7, 7, 7);
+  }
+</style>
 </body>
 <script src="{% static 'js/index.js' %}"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
